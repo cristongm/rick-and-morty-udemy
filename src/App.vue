@@ -4,12 +4,14 @@
         <FilterByStatus />
         <FilterByName />
         <ListCharacters />
+        <Paginator />
     </div>
 </template>
 <script setup>
 import ListCharacters from './components/ListCharacters.vue'
 import FilterByStatus from './components/FilterByStatus.vue';
 import FilterByName from './components/FilterByName.vue';
+import Paginator from './components/CharacterPaginator.vue';
 </script>
 <style lang="scss">
 :root{
