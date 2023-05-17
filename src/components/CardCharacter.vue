@@ -27,11 +27,8 @@
   </div>
 </template>
 
-<script>
-export default {
-    props:['character'],
-    
-}
+<script setup>
+    defineProps(['character'])
 </script>
 
 <style lang="scss">

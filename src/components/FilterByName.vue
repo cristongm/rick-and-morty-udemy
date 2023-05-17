@@ -9,21 +9,17 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue'
 import {useCharacterStore} from '../stores/'
-export default {
-    setup(){
-        const store = useCharacterStore()
-        const name = ref('')
-        const filter = () => {
-            store.filterByName(name.value)
-        }
-        return{
-            name, filter
-        }
-    }
+
+const store = useCharacterStore()
+const name = ref('')
+const filter = () => {
+    store.filterByName(name.value)
 }
+        
+
 </script>
 
 <style lang="scss">

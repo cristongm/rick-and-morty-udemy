@@ -8,26 +8,21 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import {useCharacterStore} from '@/stores/'
 import { computed, onMounted } from 'vue'
 import CardCharacter from './CardCharacter.vue'
-export default {
-    components:{
-        CardCharacter
-    },
-    setup(){
-        const store = useCharacterStore()
-        const characters = computed(() => {
-            return store.charactersFilter
-        })
-        onMounted(() => {
-            store.getCharacters();
-            
-        })
-        return {characters}
-    }
-}
+
+const store = useCharacterStore()
+const characters = computed(() => {
+    return store.charactersFilter
+})
+onMounted(() => {
+    store.getCharacters();
+    
+})
+
+
 </script>
 
 <style>

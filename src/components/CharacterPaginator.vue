@@ -19,19 +19,15 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import {useCharacterStore} from '@/stores/'
 import {computed} from 'vue'
-export default {
-    setup(){
-        const store = useCharacterStore();
-        const info = computed(() => store.info)
-        const currentPage = computed(() => store.currentPage)
-        const changePage = (url) => {
-            store.getCharacters(url)
-        }
-        return {info, currentPage, changePage};
-    }
+
+const store = useCharacterStore();
+const info = computed(() => store.info)
+const currentPage = computed(() => store.currentPage)
+const changePage = (url) => {
+    store.getCharacters(url)
 }
 </script>
 

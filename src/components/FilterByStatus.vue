@@ -15,19 +15,13 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import {useCharacterStore} from '@/stores/'
-export default {
-    setup(){
-        const store = useCharacterStore()
-        const filter= (status => {
-            store.filterByStatus(status)
-        })
-        return{
-            filter
-        }
-    }
-}
+
+const store = useCharacterStore()
+const filter= (status => {
+    store.filterByStatus(status)
+})
 </script>
 
 <style lang="scss">
